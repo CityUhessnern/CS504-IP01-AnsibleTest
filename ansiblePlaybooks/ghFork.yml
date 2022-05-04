@@ -1,0 +1,18 @@
+---
+- name: Git Add + Git Commit
+  hosts: all
+  vars:
+  - destdir: ~/Desktop/CS504-Project-HessnerNicole/Submission1/AnsibleForkTest
+  vars_prompt:
+  - name: "forkName"
+    prompt: Please provide a name for the fork.
+    private: no
+
+  tasks:
+   
+  - name: GitHub - Fork
+    shell:
+      gh repo fork --clone https://github.com/CityUhessnern/CS504-IP01-AnsibleTest --fork-name "'{{forkName}}'"
+    ignore_errors: yes
+
+...
