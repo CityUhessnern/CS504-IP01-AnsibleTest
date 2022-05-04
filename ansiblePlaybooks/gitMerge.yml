@@ -1,6 +1,6 @@
 ---
 - name: GitHub Pull Request  
-  hosts: localhost
+  hosts: all
   vars:
   - destdir: ~/Desktop/CS504-Project-HessnerNicole/Submission1/CS504-IP01-AnsibleTest
   - repo: https://github.com/CityUhessnern/CS504-IP01-AnsibleTest
