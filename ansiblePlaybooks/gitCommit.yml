@@ -7,6 +7,10 @@
   - name: "commitMessage"
     prompt: Please input message to include with commit.
     private: no
+  
+  - name: "branchName"
+    prompt: Please input remote branch name.
+    private: no
 
   tasks:
 
@@ -42,7 +46,7 @@
       var: gitcommit.stdout   
   
   - name: Git - Push
-    shell: git push
+    shell: git push --set-upstream origin '{{branchName}}'
     args:
       chdir: "{{destdir}}"
     register: gitpush
