@@ -3,6 +3,7 @@ This is a public repository for testing Ansible Playbooks and Git/GitHub command
 
 # AnsibleClone
 Did the Ansible Clone work?
+Yes, the Ansible Clone worked. (Machine B).
 <p>Yes, the Ansible Clone worked with user input (Machine A).
 
 # AnsibleCommit
@@ -29,6 +30,7 @@ Did the Ansible Release Point work?
 Did the Ansible Simultaneous Edit work?
 <p> This is code from CityUhessnern on Machine A. Machine A submitted first.
 <p> This is code from the server (branch simultaneous-edit-test).
+<p> This is code from alkerra on Machine B. Machine B submitted second.
 
 # AnsibleCodeRollback
 Did the Ansible Code Rollback work?
