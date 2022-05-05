@@ -27,7 +27,8 @@ Did the Ansible Release Point work?
 
 # AnsibleSimultaneousEdit
 Did the Ansible Simultaneous Edit work?
-<p> This is code from CityUhessnern on Machine A.
+<p> This is code from CityUhessnern on Machine A. Machine A submitted first.
+<p> This is code from the server (branch simultaneous-edit-test).
 
 # AnsibleCodeRollback
 Did the Ansible Code Rollback work?
