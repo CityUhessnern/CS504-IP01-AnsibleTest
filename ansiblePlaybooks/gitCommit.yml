@@ -43,6 +43,7 @@
     args:
       chdir: "{{destdir}}"
     register: gitcommit
+    ignore_errors: yes
     when: git.msg is defined
   - debug:
       var: gitcommit.stdout   
