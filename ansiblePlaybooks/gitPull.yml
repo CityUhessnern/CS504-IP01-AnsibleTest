@@ -1,0 +1,49 @@
+---
+- name: Git Pull from GitHub
+  hosts: localhost
+  vars:
+  - destdir: ~/Desktop/CS504-Project-HessnerNicole/Submission1/CS504-IP01-AnsibleTest
+
+  tasks:
+
+  - name: Git - Status
+    shell:
+      "git status"
+    args:
+      chdir: "{{destdir}}"
+    register: gitstatus
+    ignore_errors: yes
+    when: git.msg is defined
+  - debug:
+      var: gitstatus.cmd
+
+  - name: Git - Add
+    shell:
+      "git add --all"
+    args:
+      chdir: "{{destdir}}"
+    register: gitall
+    ignore_errors: yes
+    when: git.msg is defined
+  - debug:
+      var: gitall.cmd
+  
+  - name: Git - Commit
+    shell:
+      'git commit -m "Ansible Pull Test"
+    args:
+      chdir: "{{destdir}}"
+    register: gitcommit
+    ignore_errors: yes
+    when: git.msg is defined
+  - debug:
+      var: gitcommit.cmd
+    ignore_errors: yes 
+
+  - name: Git - Pull
+    shell:
+      git pull origin ansible-pull-request-playbook
+    args:
+      chdir: "{{destdir}}"
+...
+

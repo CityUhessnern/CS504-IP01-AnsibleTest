@@ -1,0 +1,23 @@
+---
+- name: Create playbook for adding users
+  hosts: all
+  tasks:
+    - name: Create user "Nikki Hessner" as sudo
+      ansible.builtin.user:
+        name: hessnern
+        comment: NicoleHessner
+        group: sudo
+
+    - name: Add group "developers"
+      group: 
+        name: devs
+        state: present
+  
+    - name: Create user "Marie Kiesz" and add to devs
+      ansible.builtin.user:
+        name: kieszm
+        comment: MarieKiesz
+        shell: /bin/bash
+        groups: devs
+        append: yes
+...

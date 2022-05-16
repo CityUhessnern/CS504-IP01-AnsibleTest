@@ -8,20 +8,13 @@
     prompt: Please provid the remote branch name.
     private: no
 
+  - name: "checksum"
+    prompt: Please provide the checksum of the commit you would like to roll back to.
+    private: no
+  
   tasks:
-   
-  - name: Git - Log
-    shell: 
-      git log --oneline
-    register: gitlog
-  - debug:
-      var: gitlog.stdout 
 
   - name: GitReset
-    vars_prompt:
-      - name: "checksum"
-        prompt: Please provide the checksum of the commit you would like to roll back to.
-        private: no
     shell:
       gh reset --hard "{{checksum}}"
   
